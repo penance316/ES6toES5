@@ -1,0 +1,15 @@
+{
+  "name": "ES6toES5",
+  "description": "Convert JS files from ES6 to ES5",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run build:babel & npm run build:google",
+    "build:babel": "babel src -d build/babel ",
+    "build:google": "google-closure-compiler -O SIMPLE --js ./src/input.js --language_in=ES6 --language_out=ES5 --js_output_file=./build/google/out.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/preset-env": "^7.20.2",
+    "google-closure-compiler": "^20221102.0.1"
+  }
+}
